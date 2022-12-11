@@ -1,0 +1,226 @@
+:root {
+  font-size: 16px;
+  /*font-family: "M PLUS Rounded 1c";*/ /*読みやすいし角が丸くてかわいい*/
+  font-family: "Kaisei Decol"; /*お嬢様みたいで上品かつかわいい*/
+  /* font-family: "DotGothic16"; */ /* レトロでかわいい */
+  text-shadow: 0.5px 0.5px 1px rgba(125, 125, 125, 0.339);
+  background-color: rgb(227, 227, 227);
+  min-width: 600px;
+}
+#header {
+  display: grid;  
+  grid-template-columns: 1fr 6rem 6rem 6rem 1rem;
+  height: 3rem; width: 100%;
+  font-size: 1rem;
+  line-height: 1.1rem;
+  text-align: center;
+  font-family: "DotGothic16";
+  z-index: 100;
+  
+  position: fixed;
+}
+a {
+  text-decoration: none;
+  color: black;
+
+}
+a.hd {  
+  font-size: 1.3rem;
+  line-height: 1.3rem;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.356);
+}
+a:hover {
+  color: rgba(239, 0, 80, 0.5);
+
+}
+
+/* 複数のページに共通するクラス */
+/* container haikei_img front_cover contents image*/
+
+/*ページ全体をcontainerでくくる*/
+.container {
+  width: 100%;
+  height: fit-content;
+}
+/* 背景用の画像のcss */
+.haikei_img {
+  /* height: 50%; */
+  width: 45rem;
+  z-index: -100; /*背景画像のため一番奥に配置する*/
+  
+  /*画面の中央に表示させつづける*/
+  /* 上下中央 */
+  top: 0;
+  bottom: 0;
+  margin-top: auto;
+  margin-bottom: auto;
+
+  /*左右中央*/
+  left: 50%;
+  transform: translate(-50%, 0%);
+  position: fixed;
+
+  filter: blur(3px); /* がびがびなのをごまかすためにぼやけさせる */
+
+}
+/*表紙の大きさを統一する。横幅はcontainerの100%を引き継ぐ*/
+.front_cover {
+  height: 100vh; width: 100%;
+  /* background-color: rgb(0, 153, 255); */
+    margin: 0 0 5% 0;
+
+}
+/*タイトルとの距離、左右幅を統一する */
+.contents {
+  padding: 5% 20% 15% 20%; /* コンテンツの左右に画面20%の余白を作る。中身は画面サイズによって大きさが変わる */
+  /* background-color: pink; */
+  width: 100%;
+  height: fit-content;
+}
+.image {
+  object-fit: cover;
+  width: 100%;
+  
+}
+.image.configuration {
+  object-fit:fill;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.678);
+}
+
+.app_exp {
+  margin: 0 0 5% 0;
+}
+.contents.ccpt {
+  /* background-color: rgb(255, 115, 139); */
+  display: grid;
+  grid-template-columns: 1fr 40%;
+
+}
+.ccpt_exp {
+  grid-column: 1 / 2;
+  margin: 0 5% 0 0;
+  /* background-color: blueviolet; */
+}
+.ccpt_img {
+  grid-column: 2 / 3;
+
+  width: 100%;
+  aspect-ratio: 1 / 1.5;
+  
+  /* background-color: rgb(207, 156, 255); */
+
+}
+.contents.dev {
+  /* background-color: rgb(255, 115, 139); */
+  display: grid;
+  grid-template-columns: 1fr 30%;
+
+}
+.configuration {
+  grid-column: 1 / 2;
+  margin: 0 5% 0 0;
+  width: 95%;
+  aspect-ratio: 5 / 4;
+  /* background-color: blueviolet; */
+}
+.dev_exp {
+  grid-column: 2 / 3;
+  
+}
+.exp_box {
+  display: grid;
+
+  grid-template-columns: 30% 2% 1fr;
+}
+
+
+.hukidashi {
+  grid-column: 3 / 4;
+  width: 100%;
+  height: fit-content;
+  padding: 5%;
+  background-color: rgba(255, 255, 255, 0.771);
+  border-radius: 25%;
+
+} 
+
+.icon {
+  grid-column: 1 / 2;
+
+  top: 0;
+  bottom: 0;
+  margin-top: auto;
+  margin-bottom: auto;
+
+}
+/*　共通するけど後々コンポーネントにするかもしれないクラス　*/
+/* title passion_box page系列*/
+
+/* .skill_bar {
+
+} */
+.works_page {
+  width: 100%; height:100vh;
+  display: grid;
+  grid-template-columns: 10% 1fr 10%;
+
+  z-index: 50; /* headerより後ろ他の物より手前 */
+  position: fixed;
+  pointer-events: none;
+
+  /* 確認用 */
+  /* background-color: blue; */
+}
+.page_center {
+  grid-column: 2 / 3;
+  pointer-events: none;
+
+}
+.page_left {
+  grid-column: 1 / 2;
+  opacity: 0;
+  pointer-events: auto;
+  margin-right: auto;
+
+  /* background: linear-gradient(90deg, rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0));  */
+}
+.page_right {
+  grid-column: 3/ 4;
+  opacity: 0;
+  pointer-events: auto;
+  margin-left: auto;
+  margin-right: 20px;
+
+  /* background: linear-gradient(90deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.18));  */
+}
+.page_left:hover{
+  opacity: 1;
+}
+.page_right:hover{
+  opacity: 1;
+}
+.btn {
+  /* background-color: rgb(227, 227, 227); */
+  height: 5rem;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.103),
+              -1px -1px 10px rgba(161, 161, 161, 0.192);
+  border-radius: 100%;
+  aspect-ratio: 1/1;
+  transform: translate(0, 50vh);
+  background-color: rgba(255, 255, 255, 0.247);
+
+  
+
+}
+.btn:hover {
+  background-color: rgba(255, 0, 85, 0.274);
+}
+.btn_label {
+  padding: 2rem 0 2rem 0;
+  text-align: center;
+  color: rgba(66, 66, 66, 0.8);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25),
+              -1px -1px 3px white;
+}
