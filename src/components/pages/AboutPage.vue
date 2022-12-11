@@ -71,6 +71,13 @@
       </div>
       
     </div>
+    <!-- Skill history bar -->
+    <div class="skill_history">
+      <div class="skill_history_bar">
+        
+      </div>
+    </div>
+
   </div>
   </div>
 </template>
@@ -195,5 +202,18 @@ export default {
 .skill_box.right {
   grid-column: 2 / 3;
 }
+/* skill history */
+.skill_history {
+  width: 100%;
+  height: fit-content;
+  display: grid;
+  grid-template-columns: 30% 1fr;
+}
+.skill_history_bar {
+  grid-column: 1 / 2;
+  background-color: rgba(0, 0, 0, 0.507);
+  width:8px;
+  height:500px;
 
+}
 </style>
