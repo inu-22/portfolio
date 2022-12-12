@@ -30,6 +30,16 @@
     <!-- MY SKILL -->
     <MyTitle :name="name[2]" :number="number[2]"  sub="触れた技術と学習度"></MyTitle>
     <div class="contents skill">
+      <!-- animation test できた！さすが公式サイト -->
+      <div id="demo">
+        <button v-on:click="show = !show">
+          Toggle
+        </button>
+        <transition name="fade">
+          <p v-if="show">hello</p>
+        </transition>
+      </div>
+
       <div class="skill_box left">
         <SkillBar :skill_bar="skills[0]"></SkillBar>
         <SkillBar :skill_bar="skills[1]"></SkillBar>
@@ -141,7 +151,9 @@ export default {
           sklname: "SQL",
           score: 0.4
         },
-      ]
+      ],
+      //表示アニメーション
+      show: true
       
     }
   }
@@ -202,6 +214,14 @@ export default {
 .skill_box.right {
   grid-column: 2 / 3;
 }
+/* animation */
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+
 /* skill history */
 .skill_history {
   width: 100%;
@@ -216,4 +236,5 @@ export default {
   height:500px;
 
 }
+
 </style>
